@@ -16,10 +16,10 @@ public final class SerializedTransformable<T: Transformable> {
     let alternateKey: String?
     public var wrappedValue: T.To?
     
-    public init(_ key: String? = nil, alternateKey: String? = nil) {
+    public init(_ key: String? = nil, alternateKey: String? = nil, fallback: T.To? = nil) {
         self.key = key
         self.alternateKey = alternateKey
-        self.wrappedValue = nil
+        self.wrappedValue = fallback
     }
 }
 
